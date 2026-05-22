@@ -1,0 +1,73 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+
+header {
+    height: 250px;
+
+    background: linear-gradient(
+        to right,
+        #009246 33.3%,
+        #ffffff 33.3%,
+        #ffffff 66.6%,
+        #ce2b37 66.6%
+    );
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+
+    padding: 20px;
+    text-align: center;
+}
+
+.header-content {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 2em;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(255,255,255,0.6);
+}
+header p {
+    font-family: "Great Vibes", cursive;
+    font-size: 1.5em;
+    text-shadow: 0 2px 4px rgba(255,255,255,0.6);
+}
+nav {
+    margin-top: 10px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.2s;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+nav a.active {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 6px;
+}
