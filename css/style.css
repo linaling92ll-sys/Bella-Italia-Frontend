@@ -9,7 +9,7 @@ body {
     font-family: "Lato", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgb(161, 207, 161);
+    background-color: rgb(193, 218, 193);
 }
 
 main {
@@ -192,4 +192,66 @@ footer {
 
 .contact-info a:hover {
     text-decoration: underline;
+}
+
+.menu-section {
+    text-align: center;
+    margin: 40px 0;
+    max-width: 100%;
+}
+
+.menu-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+main section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main section h2 {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 20px;
+}
+
+#starters,
+#mains,
+#desserts,
+#drinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-card {
+    background-color: white;
+    width: 250px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+
+    transition: transform 0.2s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card h3 {
+    font-family: "Playfair Display", serif;
+    margin-top: 0;
+}
+
+.menu-card p {
+    font-family: "Lato", sans-serif;
+}
+
+.menu-card strong {
+    color: #ce2b37;
+    font-size: 1.1rem;
 }
