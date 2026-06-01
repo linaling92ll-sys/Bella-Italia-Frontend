@@ -22,6 +22,8 @@ async function loadMenu() {
         //Omvandlar svaret från JSON till JavaScript-objekt
         const menuItems = await response.json();
 
+        console.log(menuItems);
+
         //Loopar igenom alla maträtter
         menuItems.forEach(item => {
 
@@ -37,11 +39,11 @@ async function loadMenu() {
             </div>`;
 
             //Kollar vilken kategori maträtterns ska visas i
-            if (item.category === "Förrätt") {
+            if (item.category === "Pizza") {
                 startersContainer.innerHTML += card;
             }
 
-            else if (item.category === "Varmrätt") {
+            else if (item.category === "Pasta") {
                 mainsContainer.innerHTML += card;
             }
 
@@ -66,3 +68,4 @@ async function loadMenu() {
 
 //Anropar funktionen när sidan laddas
 loadMenu();
+
