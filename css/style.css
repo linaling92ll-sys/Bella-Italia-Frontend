@@ -77,7 +77,7 @@ nav a {
 }
 
 nav a:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(3, 145, 50, 0.5);
 }
 
 nav a.active {
@@ -85,6 +85,7 @@ nav a.active {
     color: white;
     border-radius: 6px;
 }
+
 
 .hero {
     text-align: center;
