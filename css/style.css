@@ -255,3 +255,30 @@ main section h2 {
     color: #ce2b37;
     font-size: 1.1rem;
 }
+
+.login-page {
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.login-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-page input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.login-page button {
+    padding: 10px;
+    background: #ce2b37;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
