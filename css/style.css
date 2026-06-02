@@ -89,7 +89,7 @@ nav a.active {
 
 .hero {
     text-align: center;
-    padding: 60px 20px;
+    padding: 0px 20px;
 }
 
 .hero h2 {
@@ -113,7 +113,7 @@ nav a.active {
 }
 
 .about {
-    padding: 40px 20px;
+    padding: 0px 20px;
     max-width: 800px;
     margin: auto;
     text-align: center;
