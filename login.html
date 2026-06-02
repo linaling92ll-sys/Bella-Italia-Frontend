@@ -6,39 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bella-Italia | Italiensk restaurang</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<header>
-    <div class="header-content">
-    <h1>Bella-Italia</h1>
-    <p>Italiensk restaurang</p>
-    </div>
+    <header>
+        <div class="header-content">
+            <h1>Bella-Italia</h1>
+            <p>Italiensk restaurang</p>
+        </div>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Hem</a></li>
-            <li><a href="menu.html">Meny</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    
+        <nav>
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="menu.html">Meny</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="login-page">
+            <h2>Logga in</h2>
 
-</main>
-<footer>
-    <div class="footer-left">
-        <h3>&copy Bella-Italia</h3>
-        <p>Hittepå gatan 12, 123 45 Stockholm</p>
-        <p>Tel: 08-123 45 67</p>
-    </div>
+            <form id="login-form">
 
-    <div class="footer-right">
-        <a href="admin.html">Logga in som medarbetare</a>
-    </div>
-</footer>
+                <label for="username">Användarnamn</label>
+                <input type="text" id="username" required>
+
+                <label for="password">Lösenord</label>
+                <input type="password" id="password" required>
+
+                <button type="submit">Logga in</button>
+            </form>
+
+            <p id="message"></p>
+
+        </section>
+
+
+    </main>
+    <footer>
+        <div class="footer-left">
+            <h3>&copy Bella-Italia</h3>
+            <p>Hittepå gatan 12, 123 45 Stockholm</p>
+            <p>Tel: 08-123 45 67</p>
+        </div>
+
+    </footer>
 
 </body>
 
