@@ -70,3 +70,46 @@ async function loadMenuItems() {
 }
 //Anropar funktionen
 loadMenuItems();
+
+//Hämtar formuläret
+const menuForm = document.getElementById("menu-form");
+
+//Lyssnar efter när formuläret skickas
+menuForm.addEventListener("submit", async (event) => {
+
+    //Hindrar sidan från att laddas om
+    event.preventDefault();
+
+    //Hämta värden från formuläret
+    const title = document.getElementById("title").value;
+    const description = document.getElementById("description").value;
+    const price = document.getElementById("price").value;
+    const category = document.getElementById("category").value;
+
+    try {
+        const response = await fetch("http://localhost:3000/api/menu", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+
+                //Skickar med JWT-token
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                title,
+                description,
+                price,
+                category
+            })
+        });
+
+        const data = await response.json();
+        //Rensar formuläret
+        menuForm.reset();
+
+        //Laddar om alla maträtter
+        loadMenuItems();
+    } catch (error) {
+        console.error(error);
+    }
+});
