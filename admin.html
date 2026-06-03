@@ -1,40 +1,87 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bella-Italia | Italiensk restaurang</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<header>
-    <div class="header-content">
-    <h1>Bella-Italia</h1>
-    <p>Italiensk restaurang</p>
-    </div>
+    <header>
+        <div class="header-content">
+            <h1>Bella-Italia</h1>
+            <p>Italiensk restaurang</p>
+        </div>
+    </header>
+    <main class="admin-page">
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Hem</a></li>
-            <li><a href="menu.html">Meny</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    
+        <section class="admin-header">
+            <h2>Administrera meny</h2>
 
-</main>
-<footer>
-    <div class="footer-left">
-        <h3>&copy Bella-Italia</h3>
-        <p>Hittepå gatan 12, 123 45 Stockholm</p>
-        <p>Tel: 08-123 45 67</p>
-    </div>
-</footer>
-<script src="js/admin.js"></script>
+            <button id="logout-btn">
+                Logga ut
+            </button>
+        </section>
+        <section class="add-section">
+
+            <button id="show-form-btn">
+                + Lägg till maträtt
+            </button>
+        </section>
+
+        <section id="form-section">
+            <h3>Ny maträtt</h3>
+
+            <form id="menu-form">
+
+                <label for="title">Titel</label>
+                <input type="text" id="title" required>
+
+                <label for="description">Beskrivning</label>
+                <textarea id="description" required></textarea>
+
+                <label for="price">Pris</label>
+                <input type="number" id="price" required>
+
+                <label for="category">Kategori</label>
+
+                <select id="category" required>
+                    <option value="">Välj kategori</option>
+                    <option value="Pizza">Pizza</option>
+                    <option value="Pasta">Pasta</option>
+                    <option value="Efterrätt">Efterrätt</option>
+                    <option value="Dryck">Dryck</option>
+                </select>
+
+                <button type="submit">
+                    Spara maträtt
+                </button>
+            </form>
+        </section>
+
+        <section>
+            <h3>Alla maträtter</h3>
+            <div id="menu-container">
+
+            </div>
+        </section>
+
+
+    </main>
+    <footer>
+        <div class="footer-left">
+            <h3>&copy Bella-Italia</h3>
+            <p>Hittepå gatan 12, 123 45 Stockholm</p>
+            <p>Tel: 08-123 45 67</p>
+        </div>
+    </footer>
+    <script src="js/admin.js"></script>
 </body>
 
 </html>
