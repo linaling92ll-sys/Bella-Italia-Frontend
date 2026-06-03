@@ -49,11 +49,11 @@ async function loadMenuItems() {
             
             <p>Kategori: ${item.category}</p>
             
-            <button class="edit-btn">
+            <button class="edit-btn" data-id="${item._id}">
             Redigera
             </button>
             
-            <button class="delete-btn">
+            <button class="delete-btn" data-id="${item._id}">
             Ta bort maträtt
             </button>
             
@@ -62,6 +62,17 @@ async function loadMenuItems() {
 
             //Lägger till kortet på sidan
             menuContainer.innerHTML += card;
+        });
+
+        const deleteButtons = document.querySelectorAll(".delete-btn");
+
+        deleteButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+                const id = button.dataset.id;
+
+                console.log(id);
+            });
         });
 
     } catch (error) {
