@@ -123,7 +123,7 @@ async function loadMenuItems() {
                 const id = button.dataset.id;
 
                 //Letar upp maträtten i arrayen
-                const item = menuItems.find(item => item._id ===id);
+                const item = menuItems.find(item => item._id === id);
 
                 editId = id;
 
@@ -170,28 +170,69 @@ menuForm.addEventListener("submit", async (event) => {
     const category = document.getElementById("category").value;
 
     try {
-        const response = await fetch("http://localhost:3000/api/menu", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
+        let response;
 
-                //Skickar med JWT-token
-                "Authorization": `Bearer ${token}`
-            },
-            body: JSON.stringify({
-                title,
-                description,
-                price,
-                category
-            })
-        });
+        //Kontrollerar om användaren redigerar en maträtt
+        if (editId) {
 
+            //Uppdaterar befintlig maträtt
+            response = await fetch(
+                `http://localhost:3000/api/menu/${editId}`,
+                {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json",
+
+                        //Skickar med JWT-token
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        title,
+                        description,
+                        price,
+                        category
+                    })
+                }
+            );
+
+        } else {
+            //Skapar ny maträtt
+            response = await fetch(
+                "http://localhost:3000/api/menu",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+
+                        //Skickar med JWT-token
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        title,
+                        description,
+                        price,
+                        category
+                    })
+                }
+            );
+
+        }
         const data = await response.json();
+        console.log(data);
+
         //Rensar formuläret
         menuForm.reset();
 
+        //Återställer redigeringsläget
+        editId = null;
+
+        //Återställer rubriken
+        document.getElementById("form-title").textContent =
+            "Ny maträtt";
+
         //Laddar om alla maträtter
         loadMenuItems();
+
     } catch (error) {
         console.error(error);
     }
