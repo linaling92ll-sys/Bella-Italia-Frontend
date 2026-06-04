@@ -3,7 +3,7 @@ const token = localStorage.getItem("token");
 
 //Om ingen token finns skickas användaren till login-sidan
 if (!token) {
-    window.location.href ="login.html";
+    window.location.href = "login.html";
 }
 
 //Hämtar logga ut knappen
@@ -21,6 +21,9 @@ logoutBTN.addEventListener("click", () => {
 
 //Hämtar container för maträtterna
 const menuContainer = document.getElementById("menu-container");
+
+//Sparar id för maträtten som redigeras
+let editId = null;
 
 //Funktion som hämtar alla maträtter
 async function loadMenuItems() {
@@ -71,41 +74,71 @@ async function loadMenuItems() {
 
             button.addEventListener("click", async () => {
 
-    const id = button.dataset.id;
+                const id = button.dataset.id;
 
-    const confirmed = confirm(
-        "Är du säker på att du vill ta bort maträtten?"
-    );
+                const confirmed = confirm(
+                    "Är du säker på att du vill ta bort maträtten?"
+                );
 
-    if (!confirmed) {
-        return;
-    }
-
-    try {
-
-        const response = await fetch(
-            `http://localhost:3000/api/menu/${id}`,
-            {
-                method: "DELETE",
-                headers: {
-                    "Authorization": `Bearer ${token}`
+                if (!confirmed) {
+                    return;
                 }
-            }
-        );
 
-        const data = await response.json();
+                try {
 
-        console.log(data);
+                    const response = await fetch(
+                        `http://localhost:3000/api/menu/${id}`,
+                        {
+                            method: "DELETE",
+                            headers: {
+                                "Authorization": `Bearer ${token}`
+                            }
+                        }
+                    );
 
-        loadMenuItems();
+                    const data = await response.json();
 
-    } catch (error) {
+                    console.log(data);
 
-        console.error(error);
+                    loadMenuItems();
 
-    }
+                } catch (error) {
 
-});
+                    console.error(error);
+
+                }
+
+            });
+        });
+
+        //Hämtar alla redigera-knappar
+        const editButtons = document.querySelectorAll(".edit-btn");
+
+        //Loopar igenom alla redigera-knappar
+        editButtons.forEach(button => {
+
+            //Lyssnar efter klick på knappen
+            button.addEventListener("click", () => {
+
+                const id = button.dataset.id;
+
+                //Letar upp maträtten i arrayen
+                const item = menuItems.find(item => item._id ===id);
+
+                editId = id;
+
+                //Fyller formuläret med maträttens nuvarande titel
+                document.getElementById("title").value = item.title;
+
+                //Fyller formuläret med maträttens nuvarande beskrivning
+                document.getElementById("description").value = item.description;
+
+                //Fyller formuläret med maträttens nuvarande pris
+                document.getElementById("price").value = item.price;
+
+                //Fyller formuläret med maträttens nuvarande kategori
+                document.getElementById("category").value = item.category;
+            });
         });
 
     } catch (error) {
