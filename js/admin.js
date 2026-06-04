@@ -138,6 +138,12 @@ async function loadMenuItems() {
 
                 //Fyller formuläret med maträttens nuvarande kategori
                 document.getElementById("category").value = item.category;
+
+                //Ändrar rubriken så att användaren ser vad som redigeras
+                document.getElementById("form-title").textContent = `Redigerar: ${item.title}`;
+
+                //scrolla automatiskt till formuläret
+                document.getElementById("form-section").scrollIntoView();
             });
         });
 
