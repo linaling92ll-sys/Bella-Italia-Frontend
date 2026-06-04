@@ -39,7 +39,7 @@ async function loadMenuItems() {
 
             //Skapar kort för varje maträtt
             const card = `
-            <div slass="menu-card">
+            <div class="menu-card">
             
             <h3>${item.title}</h3>
             
@@ -64,15 +64,48 @@ async function loadMenuItems() {
             menuContainer.innerHTML += card;
         });
 
+        //Hämtar knappen för att ta bort
         const deleteButtons = document.querySelectorAll(".delete-btn");
 
         deleteButtons.forEach(button => {
 
-            button.addEventListener("click", () => {
-                const id = button.dataset.id;
+            button.addEventListener("click", async () => {
 
-                console.log(id);
-            });
+    const id = button.dataset.id;
+
+    const confirmed = confirm(
+        "Är du säker på att du vill ta bort maträtten?"
+    );
+
+    if (!confirmed) {
+        return;
+    }
+
+    try {
+
+        const response = await fetch(
+            `http://localhost:3000/api/menu/${id}`,
+            {
+                method: "DELETE",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            }
+        );
+
+        const data = await response.json();
+
+        console.log(data);
+
+        loadMenuItems();
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+});
         });
 
     } catch (error) {
