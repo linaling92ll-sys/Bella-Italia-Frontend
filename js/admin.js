@@ -29,7 +29,7 @@ let editId = null;
 async function loadMenuItems() {
     try {
         //Hämtar alla maträtter från API:t
-        const response = await fetch("http://localhost:3000/api/menu");
+        const response = await fetch("https://bella-italia-we53.onrender.com/api/menu");
 
         //Omvandlar till JSON
         const menuItems = await response.json();
@@ -95,7 +95,7 @@ async function loadMenuItems() {
                 try {
 
                     const response = await fetch(
-                        `http://localhost:3000/api/menu/${id}`,
+                        `https://bella-italia-we53.onrender.com/api/menu/${id}`,
                         {
                             method: "DELETE",
                             headers: {
@@ -185,7 +185,7 @@ menuForm.addEventListener("submit", async (event) => {
 
             //Uppdaterar befintlig maträtt
             response = await fetch(
-                `http://localhost:3000/api/menu/${editId}`,
+                `https://bella-italia-we53.onrender.com/api/menu/${editId}`,
                 {
                     method: "PUT",
                     headers: {
@@ -206,7 +206,7 @@ menuForm.addEventListener("submit", async (event) => {
         } else {
             //Skapar ny maträtt
             response = await fetch(
-                "http://localhost:3000/api/menu",
+                "https://bella-italia-we53.onrender.com/api/menu",
                 {
                     method: "POST",
                     headers: {

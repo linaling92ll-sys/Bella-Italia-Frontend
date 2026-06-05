@@ -12,7 +12,7 @@ async function loadMenu() {
     try {
 
         //Skickar GET-request till API:et
-        const response = await fetch("http://localhost:3000/api/menu");
+        const response = await fetch("https://bella-italia-we53.onrender.com/api/menu");
 
         //Kontrollera om servern svarade med fel
         if (!response.ok) {
