@@ -9,7 +9,7 @@ body {
     font-family: "Lato", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgb(224, 224, 224);
+    background-color:#ebe5db;
 }
 
 main {
@@ -281,4 +281,181 @@ main section h2 {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+}
+
+.admin-page {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.admin-header {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.admin-header h2 {
+    text-align: center;
+    margin: 0;
+}
+
+#logout-btn {
+    background-color: #ce2b37;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#logout-btn:hover {
+    opacity: 0.9;
+}
+
+#form-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    margin-bottom: 40px;
+}
+
+#form-title {
+    margin-top: 0;
+    font-family: "Playfair Display", serif;
+}
+
+#menu-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#menu-form label {
+    font-weight: bold;
+}
+
+#menu-form input,
+#menu-form textarea,
+#menu-form select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+}
+
+#menu-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#menu-form button {
+    width: fit-content;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #005c2e;
+    color: white;
+}
+
+#menu-form button:hover {
+    opacity: 0.9;
+}
+
+#menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.menu-info {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.menu-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: "Playfair Display", serif;
+}
+
+.menu-info p {
+    margin: 5px 0;
+}
+
+.price {
+    color: #ce2b37;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.menu-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.edit-btn,
+.delete-btn {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.edit-btn {
+    background: #005c2e;
+}
+
+.delete-btn {
+    background: #ce2b37;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+
+    .menu-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-actions {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        flex: 1;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        gap: 15px;
+    }
 }

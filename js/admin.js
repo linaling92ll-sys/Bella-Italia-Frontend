@@ -42,26 +42,34 @@ async function loadMenuItems() {
 
             //Skapar kort för varje maträtt
             const card = `
-            <div class="menu-card">
-            
-            <h3>${item.title}</h3>
-            
-            <p>${item.description}</p>
-            
-            <p><strong>${item.price} kr</strong></p>
-            
-            <p>Kategori: ${item.category}</p>
-            
-            <button class="edit-btn" data-id="${item._id}">
+<div class="menu-card">
+
+    <div class="menu-info">
+
+        <h3>${item.title}</h3>
+
+        <p>${item.description}</p>
+
+        <p class="price">${item.price} kr</p>
+
+        <p>Kategori: ${item.category}</p>
+
+    </div>
+
+    <div class="menu-actions">
+
+        <button class="edit-btn" data-id="${item._id}">
             Redigera
-            </button>
-            
-            <button class="delete-btn" data-id="${item._id}">
-            Ta bort maträtt
-            </button>
-            
-            </div>
-            `;
+        </button>
+
+        <button class="delete-btn" data-id="${item._id}">
+            Ta bort
+        </button>
+
+    </div>
+
+</div>
+`;
 
             //Lägger till kortet på sidan
             menuContainer.innerHTML += card;
