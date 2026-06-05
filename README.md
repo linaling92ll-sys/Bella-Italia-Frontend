@@ -43,3 +43,4 @@ Webbplatsen är anpassad för olika skärmstorlekar med hjälp av CSS.
 
 ## Live
 [backend](https://bella-italia-we53.onrender.com/)
+[Frontend](https://shimmering-melomakarona-e7ddec.netlify.app/)
