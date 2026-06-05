@@ -1,0 +1,461 @@
+html, body {
+    height:100%;
+    margin:0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#ebe5db;
+}
+
+main {
+    flex:1;
+}
+
+header {
+    height: 250px;
+
+    background: linear-gradient(
+        to right,
+        #009246 33.3%,
+        #ffffff 33.3%,
+        #ffffff 66.6%,
+        #ce2b37 66.6%
+    );
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+
+    padding: 20px;
+    text-align: center;
+}
+
+.header-content {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 2em;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(255,255,255,0.6);
+}
+header p {
+    font-family: "Great Vibes", cursive;
+    font-size: 1.5em;
+    text-shadow: 0 2px 4px rgba(255,255,255,0.6);
+}
+nav {
+    margin-top: 10px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.2s;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    background: rgba(3, 145, 50, 0.5);
+}
+
+nav a.active {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 6px;
+}
+
+
+.hero {
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.hero h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-family: "Lato", sans-serif;
+    margin: 10px 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ce2b37;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.about {
+    padding: 0px 20px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.highlights {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f5f5f5;
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+    background: #111;
+    color: white;
+    margin-top: 40px;
+}
+.footer-left h3 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+}
+
+.footer-left p {
+    margin: 5px 0;
+    font-family: "Lato", sans-serif;
+    font-size: 0.9rem;
+}
+.footer-right a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Lato", sans-serif;
+}
+
+.footer-right a:hover {
+    text-decoration: underline;
+}
+
+.contact {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+}
+
+.contact-info {
+    margin-top: 20px;
+    font-family: "Lato", sans-serif;
+    line-height: 1.8;
+}
+
+.contact-info a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.menu-section {
+    text-align: center;
+    margin: 40px 0;
+    max-width: 100%;
+}
+
+.menu-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+main section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main section h2 {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 20px;
+}
+
+#starters,
+#mains,
+#desserts,
+#drinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-card {
+    background-color: white;
+    width: 250px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+
+    transition: transform 0.2s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card h3 {
+    font-family: "Playfair Display", serif;
+    margin-top: 0;
+}
+
+.menu-card p {
+    font-family: "Lato", sans-serif;
+}
+
+.menu-card strong {
+    color: #ce2b37;
+    font-size: 1.1rem;
+}
+
+.login-page {
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.login-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-page input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.login-page button {
+    padding: 10px;
+    background: #ce2b37;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.admin-page {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.admin-header {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.admin-header h2 {
+    text-align: center;
+    margin: 0;
+}
+
+#logout-btn {
+    background-color: #ce2b37;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#logout-btn:hover {
+    opacity: 0.9;
+}
+
+#form-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    margin-bottom: 40px;
+}
+
+#form-title {
+    margin-top: 0;
+    font-family: "Playfair Display", serif;
+}
+
+#menu-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#menu-form label {
+    font-weight: bold;
+}
+
+#menu-form input,
+#menu-form textarea,
+#menu-form select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+}
+
+#menu-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#menu-form button {
+    width: fit-content;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #005c2e;
+    color: white;
+}
+
+#menu-form button:hover {
+    opacity: 0.9;
+}
+
+#menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.menu-info {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.menu-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: "Playfair Display", serif;
+}
+
+.menu-info p {
+    margin: 5px 0;
+}
+
+.price {
+    color: #ce2b37;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.menu-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.edit-btn,
+.delete-btn {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.edit-btn {
+    background: #005c2e;
+}
+
+.delete-btn {
+    background: #ce2b37;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+
+    .menu-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-actions {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        flex: 1;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
